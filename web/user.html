@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章管理系统 - 用户中心</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="user-header">
+            <h2>用户中心</h2>
+            <title id="back-to-user-btn" class="btn">返回用户中心</title>
+            <button id="logout-btn" class="btn">退出登录</button>
+            <button id="artcate-btn" class="btn">文章分类管理</button>
+        </div>
+
+        <div class="user-content">
+            <div class="user-info">
+                <h3>个人信息</h3>
+                <div class="info-item">
+                    <label>用户名：</label>
+                    <span id="user-username">-</span>
+                </div>
+                <div class="info-item">
+                    <label>昵称：</label>
+                    <span id="user-nickname">-</span>
+                </div>
+                <div class="info-item">
+                    <label>邮箱：</label>
+                    <span id="user-email">-</span>
+                </div>
+                <!-- 添加编辑资料按钮 -->
+                <!-- <button id="edit-userinfo-btn" class="btn">编辑资料</button> -->
+            </div>
+
+            <!-- 恢复用户表单容器 -->
+            <div class="user-forms">
+                <!-- 编辑用户信息表单 -->
+                <div class="form-group userinfo-form hidden">
+                    <h3>编辑个人信息</h3>
+                    <div class="form-item">
+                        <label for="edit-nickname">昵称</label>
+                        <input type="text" id="edit-nickname" placeholder="请输入昵称">
+                    </div>
+                    <div class="form-item">
+                        <label for="edit-email">邮箱</label>
+                        <input type="email" id="edit-email" placeholder="请输入邮箱">
+                    </div>
+                    <div class="form-item">
+                        <button id="save-userinfo-btn" class="btn">保存修改</button>
+                    </div>
+                    <div class="form-tip" id="userinfo-tip"></div>
+                </div> 
+
+                <!-- 修改密码表单 -->
+                 <div class="form-group password-form hidden">
+                    <h3>修改密码</h3>
+                    <div class="form-item">
+                        <label for="old-password">旧密码</label>
+                        <input type="password" id="old-password" placeholder="请输入旧密码">
+                    </div>
+                    <div class="form-item">
+                        <label for="new-password">新密码</label>
+                        <input type="password" id="new-password" placeholder="请输入新密码(6-12位)">
+                    </div>
+                    <div class="form-item">
+                        <button id="change-password-btn" class="btn">修改密码</button>
+                    </div>
+                    <div class="form-tip" id="password-tip"></div>
+                </div>
+            </div>
+        </div>
+    </div> 
+
+    <script src="js/util.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/user.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            User.initUserPage();
+        });
+    </script>
+</body>
+
+</html>

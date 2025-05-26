@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章管理系统 - 登录</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h2>文章管理系统</h2>
+            <div class="tab-content">
+                <div class="tab-btn active" data-tab="login">登录</div>
+                <div class="tab-btn" data-tab="register">注册</div>
+            </div>
+
+            <div class="form-content">
+                <!-- 登录表单 -->
+                <div class="form-group login-form active">
+                    <div class="form-item">
+                        <label for="login-username">用户名</label>
+                        <input type="text" id="login-username" placeholder="请输入用户名">
+                    </div>
+                    <div class="form-item">
+                        <label for="login-password">密码</label>
+                        <input type="password" id="login-password" placeholder="请输入密码">
+                    </div>
+                    <div class="form-item">
+                        <button id="login-btn" class="btn">登录</button>
+                    </div>
+                    <div class="form-tip" id="login-tip"></div>
+                </div>
+
+                <!-- 注册表单 -->
+                <div class="form-group register-form">
+                    <div class="form-item">
+                        <label for="register-username">用户名</label>
+                        <input type="text" id="register-username" placeholder="请输入用户名">
+                    </div>
+                    <div class="form-item">
+                        <label for="register-password">密码</label>
+                        <input type="password" id="register-password" placeholder="请输入密码(6-12位)">
+                    </div>
+                    <div class="form-item">
+                        <button id="register-btn" class="btn">注册</button>
+                    </div>
+                    <div class="form-tip" id="register-tip"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/util.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/user.js"></script>
+    <script>
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function () {
+            User.initLoginPage();
+        });
+    </script>
+</body>
+
+</html>

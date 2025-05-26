@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章管理系统 - 文章分类</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>文章分类管理</h2>
+            <button id="back-btn" class="btn">返回用户中心</button>
+        </div>
+
+        <div class="artcate-content">
+            <div class="action-bar">
+                <button id="add-cate-btn" class="btn">添加分类</button>
+            </div>
+
+            <!-- 分类列表 -->
+            <div class="cate-list">
+                <h3>分类列表</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>分类名称</th>
+                            <th>分类别名</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cate-table-body">
+                        <!-- 分类数据将通过JS动态插入 -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 添加/编辑分类表单 -->
+            <div class="form-group cate-form hidden">
+                <h3 id="form-title">添加文章分类</h3>
+                <input type="hidden" id="edit-cate-id">
+                <div class="form-item">
+                    <label for="cate-name">分类名称</label>
+                    <input type="text" id="cate-name" placeholder="请输入分类名称">
+                </div>
+                <div class="form-item">
+                    <label for="cate-alias">分类别名</label>
+                    <input type="text" id="cate-alias" placeholder="请输入分类别名">
+                </div>
+                <div class="form-item">
+                    <button id="save-cate-btn" class="btn">保存</button>
+                    <button id="cancel-cate-btn" class="btn cancel">取消</button>
+                </div>
+                <div class="form-tip" id="cate-tip"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/util.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/artcate.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            ArtCate.initArtCatePage();
+        });
+    </script>
+</body>
+
