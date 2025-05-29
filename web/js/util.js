@@ -10,6 +10,10 @@ const Util = {
         return localStorage.getItem('token');
     },
 
+    getUserId() {
+        return localStorage.getItem('id');
+    },     //其他的
+
     // 移除本地token
     removeToken() {
         localStorage.removeItem('token');

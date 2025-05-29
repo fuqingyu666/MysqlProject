@@ -37,6 +37,7 @@ const User = {
 
                     // 保存登录状态
                     localStorage.setItem('isLoggedIn', 'true');
+                    localStorage.setItem('userId', result.id);   //新加的
 
                     // 3秒后跳转到用户中心
                     setTimeout(() => {
@@ -169,3 +170,7 @@ const User = {
     }
 };
     
+
+
+
+

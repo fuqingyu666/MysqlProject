@@ -89,6 +89,5 @@ exports.updateAvatar=(req,res)=>{
         res.cc('更新头像成功',0)   
     })
 
-
-}
+ }
 
